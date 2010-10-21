@@ -1,0 +1,37 @@
+<html>
+<body>
+	<table>
+    {% for team in teams %}
+	<tr>
+        <td>{{colors[team.id]}}</td>
+        {% for category, favorite in team.favorites.items() %}
+            <td>{{category}}, {{favorite}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+    
+    {% for team in teams %}
+        <h1>{{colors[team.id]}}</h1>
+
+		<table border=1>
+		<tr>
+			<th></th>
+            {% for category, choices in categories.items() %}
+                <th>{{category}}</th>
+            {% endfor %}
+		</tr>
+
+        {% for player in team.members %}
+		<tr>
+            <td><a href='{{player.name}}.html'>{{player}}</a></td>
+
+            {% for category, choices in categories.items() %}
+                <td>{{player.favorites[category]}} {% if not player.is_red_herring[category] %}*{% endif %}</td>
+            {% endfor %}
+	    </tr>
+        {% endfor %}
+	    </table>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<body>
+    <h1>{{ players[0].name }}</h1>
+    <div style='width: 800px'>
+    You have to find your team-mates. This sheet has a list of your favorite things. 
+    Your team-mates will have at least eight (8) of these things in common with you.
+    But be careful! You may also have some things in common with people from other teams.
+    You could also have more than one person on your team! When you learn about someone
+    else's favorites write them on this sheet. At the end it should be clear who your
+    team-mates are and who the other teams are. 
+    <br><br>
+    You get 1 point for every correct team you identify and 10 points if you correctly 
+    find all of your team-mates. You can use these points in other games later.
+    </div>
+    <table border=1>
+    <th>
+        {% for player in players %}
+            <td style='font-size: larger; font-weight: bolder'>{{ player.name }}</td>
+        {% endfor %}
+    </th>
+    {% for category in categories.keys() %}
+    <tr>
+        <td style='font-size: larger; font-weight: bolder'>{{category}}</td>
+        {% for player in players %}
+            {% if loop.first %}
+                <td style='font-size: larger; font-weight: bolder'>{{player.favorites[category]}}</td>
+            {% else %}
+                <td><div style='width: 100px'>&nbsp;</div></td>
+            {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
