@@ -147,7 +147,7 @@ def allocate():
     # But if we have an odd number remaining stick them on
     # a random team.
     while len(player_copy) > 0:
-        random.choice(teams).members.append(player_copy[0])
+        random.choice(teams).members.append(player_copy.pop(0))
 
     # Give each team some things in common
     # But not given to each individual team member yet
