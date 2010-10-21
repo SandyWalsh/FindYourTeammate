@@ -1,9 +1,11 @@
 # Find Your Teammate
 # (c) Dark Secret Software Inc, 2010
-# 
+# Distributed under Apache Commons License.
+
 import random
 import unittest
 import sys
+
 from jinja2 import Template, Environment, FileSystemLoader
 
 categories = { 
@@ -22,13 +24,13 @@ categories = {
         'Tomato Juice', 'Apple Juice', 'Fruitopia', 'Shirley Temple'
     ],
     'Sport' : [
-    'Soccer', 'Hockey', 'Swimming', 'Basketball', 'Volleyball',
-    'Dancing', 'Running', 'Ringette', 'Football',  'Tennis', 'Badmiton'
+        'Soccer', 'Hockey', 'Swimming', 'Basketball', 'Volleyball',
+        'Dancing', 'Running', 'Ringette', 'Football',  'Tennis', 'Badmiton'
     ],
     'Book' : [
-    'Harry Potter', 'Garfield', 'Calvin & Hobbes', 'Indiana Jones', 
-    'Diary of a Wimpy Kid', 'Rainbow Magic', 'Captain Underpants', 
-    'Geronimo Stilton', 'Magic Treehouse', 'Allie Finkle'
+        'Harry Potter', 'Garfield', 'Calvin & Hobbes', 'Indiana Jones', 
+        'Diary of a Wimpy Kid', 'Rainbow Magic', 'Captain Underpants', 
+        'Geronimo Stilton', 'Magic Treehouse', 'Allie Finkle'
     ],
     'Restaurant' : [
         'McDonalds', 'Wendys', 'Pizza Delight', 'Mr Yee', 'Swiss Chalet',
@@ -42,8 +44,8 @@ categories = {
         'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet', 'Black'
     ],
     'Vegetable' : [
-    'Potato', 'Carrot', 'Tomato', 'Corn', 'Celery', 
-    'Cucumber', 'Sweet Potato', 'Brocolli', 'Califlower'
+        'Potato', 'Carrot', 'Tomato', 'Corn', 'Celery', 
+        'Cucumber', 'Sweet Potato', 'Brocolli', 'Califlower'
     ],
     'Word' : [
         'Apple', 'Baker', 'Charlie', 'Delta', 'Echo', 
