@@ -136,7 +136,7 @@ def allocate():
     player_copy = players[:] # shallow
     random.shuffle(player_copy)
     
-    # Assume two players per team ...
+    # Assume three players per team and an even multiple of players.
     while len(player_copy) >= 3:
         first = player_copy.pop(0)
         second = player_copy.pop(0)
@@ -146,7 +146,7 @@ def allocate():
     
     # But if we have an odd number remaining stick them on
     # a random team.
-    if len(player_copy) == 1:
+    while len(player_copy) > 0:
         random.choice(teams).members.append(player_copy[0])
 
     # Give each team some things in common
@@ -243,6 +243,8 @@ def show_results(teams):
     file.close()
    
     for player in all_players:
+        # TODO: We need to shuffle this up so the output
+        # doesn't list all teams members side-by-side!
         others = all_players[:]
         del others[all_players.index(player)]
         ordered = [player]
