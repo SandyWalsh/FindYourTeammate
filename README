@@ -1,2 +1,4 @@
 Built using Python 2.6+
 Requires Jinja for output ... http://jinja.pocoo.org/
+
+(Sorry, it spews output into the cwd and everything is hardcoded for now)
